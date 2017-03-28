@@ -30,15 +30,31 @@
 				</ul>
 			</div>
 			<div class="bottom-content">
+				<?php
+				mysql_connect("localhost","root","1234");
+				mysql_select_db("WebTUPattaya");
+				$strSQL = "SELECT * FROM newstb";
+				$objQuery = mysql_query($strSQL);
+				$objResult = mysql_fetch_array($objQuery);
+				?>
 				<div class="column-left-home">
-					
+					<p>
+						<?php echo $objResult["newsleft"];?>
+					</p>
 				</div>
 				<div class="column-center-home">
-					
+					<p>
+						<?php echo $objResult["newscenter"];?>
+					</p>
 				</div>
 				<div class="column-right-home">
-					 
+					<p>
+						<?php echo $objResult["newsright"];?>	 
+					</p>
 				</div>
+				<?php
+				mysql_close();
+				?>
 			</div>
 		</div>
 	</div>

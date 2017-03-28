@@ -10,7 +10,6 @@ body{
     background: #b30000;
     border: 1px solid #CCC;
     width: 960px;
-    margin: 10px 159px;
     position: fixed;
 }
 .left-header {
@@ -70,6 +69,7 @@ ppn a:hover:not(.active) {
     padding: 5px;
     background-color: #b30000;
     color: #ffffff;
+    overflow: scroll;
 }
 .column-center-home {
     margin: 6px;
@@ -79,6 +79,7 @@ ppn a:hover:not(.active) {
     padding: 5px;
     background-color: #b30000;
     color: #ffffff;
+    overflow: scroll;
 }
 .column-right-home {
     margin: 6px;
@@ -88,6 +89,7 @@ ppn a:hover:not(.active) {
     padding: 5px;
     background-color: #b30000;
     color: #ffffff;
+    overflow: scroll;
 }
 .column-left {
     margin: 6px;

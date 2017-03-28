@@ -9,15 +9,14 @@
 <?php
 	$objConnect = mysql_connect("localhost","root","1234") or die("Error Connect to Database");
 	$objDB = mysql_select_db("WebTUPattaya");
-	$strSQL = "UPDATE newstb SET ";
-	$strSQL .="newsleft = '".$_POST["newsleft"]."' ";
-	$strSQL .=",newscenter = '".$_POST["newscenter"]."' ";
-	$strSQL .=",newsright = '".$_POST["newsright"]."' ";
+	$strSQL = "UPDATE programtb SET ";
+	$strSQL .="txtSoftEN = '".$_POST["txtsoften"]."' ";
+	$strSQL .=",txtAuto = '".$_POST["txtauto"]."' ";
 	$objQuery = mysql_query($strSQL);
 	if($objQuery)
 	{
 		echo "Save Done.";
-		echo "<meta http-equiv='refresh' content='2;url=home.php'>";
+		echo "<meta http-equiv='refresh' content='2;url=program.php'>";
 		
 	}
 	else

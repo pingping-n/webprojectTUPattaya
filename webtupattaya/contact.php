@@ -38,7 +38,27 @@
 					</ul>
 				</div>
 				<div class="column-right">					
-						
+					<div style="overflow: scroll; height: 100%;">
+						<?php
+						$objConnect = mysql_connect("localhost","root","1234") or die("Error Connect to Database");
+						$objDB = mysql_select_db("WebTUPattaya");
+						$strSQL = "SELECT * FROM stafftb WHERE status='soften' ORDER BY staffID";
+						$objQuery = mysql_query($strSQL) or die ("Error Query [".$strSQL."]");
+						?>
+						<?php
+						while($objResult = mysql_fetch_array($objQuery))
+						{
+							?>
+							<div style="margin-bottom: 50px;">
+								<center><?php echo $objResult["name"];?></center>
+								<center><img src="admin/myfile/<?php echo $objResult["filesname"];?>" width="180px" height="200px"></center>
+								<center><?php echo $objResult["profile"];?></center>
+							</div>
+							<?php
+						}
+						mysql_close($objConnect);
+						?>
+					</div>
 				</div>
 			</div>
 		</div>

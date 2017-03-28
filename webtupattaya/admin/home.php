@@ -43,7 +43,9 @@
 					$objQuery = mysql_query($strSQL);
 					$objResult = mysql_fetch_array($objQuery);
 				?>
-				<textarea rows="10" cols="100" name="txtnews"><?php echo $objResult["detailNews"];?></textarea><br>
+				<textarea rows="10" cols="100" name="newsleft"><?php echo $objResult["newsleft"];?></textarea><br>
+				<textarea rows="10" cols="100" name="newscenter"><?php echo $objResult["newscenter"];?></textarea><br>
+				<textarea rows="10" cols="100" name="newsright"><?php echo $objResult["newsright"];?></textarea><br>
   				<input type="submit" name="submit" value="ยืนยัน">
   				<?php
   					mysql_close();
