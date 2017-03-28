@@ -1,5 +1,16 @@
-<?
-include "checksession.php";
+<?php
+	session_start();
+	if($_SESSION['UserID'] == "")
+	{
+		echo "Please Login!";
+		exit();
+	}
+	
+	mysql_connect("localhost","root","1234");
+	mysql_select_db("WebTUPattaya");
+	$strSQL = "SELECT * FROM member WHERE UserID = '".$_SESSION['UserID']."' ";
+	$objQuery = mysql_query($strSQL);
+	$objResult = mysql_fetch_array($objQuery);
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +41,8 @@ include "checksession.php";
 				<input type="checkbox" name="tu" value="dome">สภาพความเป็นอยู่นักศึกษา<br>
 				<input type="checkbox" name="tu" value="about">ผู้สนใจเข้าศึกษา<br>
 				<!--<input type="submit" value="Submit">-->
-				<button><a href="admin2.html">SUBMIT</a></button>
+				<button><a href="logout.php">Logout</a></button>
+				
 			</form>
 		</div>
 	</div>

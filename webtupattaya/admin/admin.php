@@ -12,7 +12,7 @@
 			<h3>THAMMASAT UNIVERSITY</h3>
 			<h3>ศูนย์พัทยา</h3>
 			<h4>USERNAME <br><input type="text" name="user_login"></h4>
-			<h4>PASSWORD <br><input type="text" name="pwd_login"></h4>
+			<h4>PASSWORD <br><input type="password" name="pwd_login"></h4>
 
 			<input type="submit" name="Submit" value="SUBMIT">
 		</div>

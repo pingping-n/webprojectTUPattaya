@@ -1,19 +1,20 @@
 <?
-$admin_user = "admin";
-$admin_pwd = "1234";
+session_start();
+mysql_connect("localhost","root","1234");
+mysql_select_db("WebTUPattaya");
+$strSQL = "SELECT * FROM member WHERE Username = '".mysql_real_escape_string($_POST['user_login'])."' 
+and Password = '".mysql_real_escape_string($_POST['pwd_login'])."'";
+$objQuery = mysql_query($strSQL);
+$objResult = mysql_fetch_array($objQuery);
 
-$user_login = (isset($_REQUEST["user_login"])) ? $_REQUEST["user_login"] : $_SESSION["sesuser_wb"];
-$pwd_login = (isset($_REQUEST["pwd_login"])) ? $_REQUEST["pwd_login"] : $_SESSION["sespasswd_wb"];
-
-if (($user_login == "") || ($pwd_login == "")) {
-	echo "<br>Fill Username or Password!";
-	echo "<meta http-equiv='refresh' content='2;url=admin.html'>";
-} elseif (($user_login != $admin_user) || ($pwd_login != $admin_pwd)) {
-	echo "<br>Username or Password incorect!";
-	echo "<meta http-equiv='refresh' content='2;url=admin.html'>";
+if(!$objResult) {
+	echo "<br>Username and Password Incorrect!";
+	echo "<meta http-equiv='refresh' content='2;url=admin.php'>";
 } else {
 	session_start();
-	$_SESSION["sess_userlogin"] = $user_login;
-	header("location:admin1.html");
+	$_SESSION["UserID"] = $objResult["UserID"];
+	session_write_close();
+	header("location:admin1.php");
 }
+mysql_close();
 ?>
