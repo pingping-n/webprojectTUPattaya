@@ -26,6 +26,7 @@
 					<ppn><a href="program.php">สาขาวิชา</a></ppn>
 					<ppn><a href="dome.php">สภาพความเป็นอยู่นักศึกษา</a></ppn>
 					<ppn><a href="about.php">ผู้สนใจเข้าศึกษา</a></ppn>
+					<ppn><a href="contractus.php">ติดต่อเรา</a></ppn>
 				</ul>
 			</div>
 			<div class="bottom-content">
