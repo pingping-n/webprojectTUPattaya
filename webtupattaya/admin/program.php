@@ -33,7 +33,25 @@
 			</div>
 		</div>
 		<div class="content">
-			
+			<p>
+				แก้ไขข่าวที่อยู่ในหน้าหลักสูตร
+			</p>
+			<form action="programsave.php" method="post">
+				<?php
+					$strSQL = "SELECT * FROM programtb";
+					$objQuery = mysql_query($strSQL);
+					$objResult = mysql_fetch_array($objQuery);
+				?>
+				SOFTWARE
+				<textarea rows="10" cols="100" name="txtsoften"><?php echo $objResult["txtsoften"];?></textarea><br>
+  				AUTO
+				<textarea rows="10" cols="100" name="txtauto"><?php echo $objResult["txtauto"];?></textarea><br>
+  				<input type="submit" name="submit" value="ยืนยัน">
+  				<?php
+  					mysql_close();
+  				?>
+			</form>
+			<button><a href="admin1.php" style="text-decoration:none">กลับหน้าหลัก</a></button>
 		</div>
 	</div>
 </body>

@@ -35,6 +35,7 @@
 		<div class="content">
 			<p>
 				แก้ไขข่าวที่อยู่ในหน้าหลัก
+				<button><a href="admin1.php" style="text-decoration:none">กลับหน้าหลัก</a></button>
 			</p>
 			<form action="homesave.php" method="post">
 				<?php
@@ -48,7 +49,6 @@
   					mysql_close();
   				?>
 			</form>
-			<button><a href="admin1.php" style="text-decoration:none">กลับหน้าหลัก</a></button>
 		</div>
 	</div>
 </body>

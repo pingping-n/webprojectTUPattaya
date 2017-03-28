@@ -33,11 +33,13 @@ $objResult = mysql_fetch_array($objQuery);
 			</div>
 		</div>
 		<div class="content">
-			<p>เลือกเนื้อหาหน้าที่ท่านต้องการจะแก้ไข</p>
+			<p>
+				เลือกเนื้อหาหน้าที่ท่านต้องการจะแก้ไข
+				<button><a href="logout.php" style="text-decoration:none">ออกจากระบบ</a></button>
+			</p>
 			<a href="home.php">หน้าหลัก</a><br>
 			<a href="staff.php">บุคลากร</a><br>
 			<a href="program.php">สาขาวิชา</a><br>
-			<button><a href="logout.php" style="text-decoration:none">ออกจากระบบ</a></button>
 		</div>
 	</div>
 </body>
