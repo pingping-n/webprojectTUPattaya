@@ -1,16 +1,16 @@
 <?php
-	session_start();
-	if($_SESSION['UserID'] == "")
-	{
-		echo "Please Login!";
-		exit();
-	}
-	
-	mysql_connect("localhost","root","1234");
-	mysql_select_db("WebTUPattaya");
-	$strSQL = "SELECT * FROM member WHERE UserID = '".$_SESSION['UserID']."' ";
-	$objQuery = mysql_query($strSQL);
-	$objResult = mysql_fetch_array($objQuery);
+session_start();
+if($_SESSION['UserID'] == "")
+{
+	echo "Please Login!";
+	exit();
+}
+
+mysql_connect("localhost","root","1234");
+mysql_select_db("WebTUPattaya");
+$strSQL = "SELECT * FROM member WHERE UserID = '".$_SESSION['UserID']."' ";
+$objQuery = mysql_query($strSQL);
+$objResult = mysql_fetch_array($objQuery);
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +18,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>TU-Pattaya_Admin</title>
+	<!--<link rel="stylesheet" type="text/css" href="main.css">-->
 </head>
 <body>
 	<div class="header-cont">
@@ -32,18 +33,11 @@
 			</div>
 		</div>
 		<div class="content">
-			<p>หน้าที่ท่านต้องการจะแก้ไข</p>
-			<form action="/action_page.php" method="get" style="margin-top: 10px; padding: 20px;">
-				<input type="checkbox" name="tu" value="home">หน้าหลัก<br>
-				<input type="checkbox" name="tu" value="student">นักศึกษา<br>
-				<input type="checkbox" name="tu" value="contact">บุคลากร<br>
-				<input type="checkbox" name="tu" value="program">สาขาวิชา<br>
-				<input type="checkbox" name="tu" value="dome">สภาพความเป็นอยู่นักศึกษา<br>
-				<input type="checkbox" name="tu" value="about">ผู้สนใจเข้าศึกษา<br>
-				<!--<input type="submit" value="Submit">-->
-				<button><a href="logout.php">Logout</a></button>
-				
-			</form>
+			<p>เลือกเนื้อหาหน้าที่ท่านต้องการจะแก้ไข</p>
+			<a href="home.php">หน้าหลัก</a><br>
+			<a href="staff.php">บุคลากร</a><br>
+			<a href="program.php">สาขาวิชา</a><br>
+			<button><a href="logout.php" style="text-decoration:none">ออกจากระบบ</a></button>
 		</div>
 	</div>
 </body>
