@@ -1,16 +1,5 @@
 <?php
-	session_start();
-	if($_SESSION['UserID'] == "")
-	{
-		echo "Please Login!";
-		exit();
-	}
-	
-	mysql_connect("localhost","root","1234");
-	mysql_select_db("WebTUPattaya");
-	$strSQL = "SELECT * FROM member WHERE UserID = '".$_SESSION['UserID']."' ";
-	$objQuery = mysql_query($strSQL);
-	$objResult = mysql_fetch_array($objQuery);
+include 'include/connectDB.php';
 ?>
 
 <!DOCTYPE html>
@@ -39,12 +28,10 @@
 				<button><a href="admin1.php" style="text-decoration:none">กลับหน้าหลัก</a></button>
 			</p>
 			<?php
-			$objConnect = mysql_connect("localhost","root","1234") or die("Error Connect to Database");
-			$objDB = mysql_select_db("WebTUPattaya");
 			$strSQL = "SELECT * FROM stafftb ORDER BY staffID";
 			$objQuery = mysql_query($strSQL) or die ("Error Query [".$strSQL."]");
 			?>
-			<table width="600" border="1">
+			<table width="1000" border="1">
 			  <tr>
 			    <th width="100"> <div align="center">Staff_ID </div></th>
 			    <th width="100"> <div align="center">Status</div></th>
@@ -52,6 +39,7 @@
 			    <th width="200"> <div align="center">Profile </div></th>
 			    <th width="200"> <div align="center">Picture </div></th>
 			    <th width="100"> <div align="center">Edit </div></th>
+			    <th width="100"> <div align="center">Delete </div></th>
 			  </tr>
 			<?php
 			while($objResult = mysql_fetch_array($objQuery))
@@ -62,16 +50,14 @@
 			<td><center><?php echo $objResult["status"];?></center></td>
 			<td><center><?php echo $objResult["name"];?></center></td>
 			<td><center><?php echo $objResult["profile"];?></center></td>
-			<td><center><img src="myfile/<?php echo $objResult["filesname"];?>" width="150px" height="150px"></center></td>
+			<td><center><img src="myfile/<?php echo $objResult["filesname"];?>" width="120px" height="150px"></center></td>
 			<td><center><a href="staffsave.php?staffID=<?php echo $objResult["staffID"];?>">Edit</a></center></td>
+			<td><center><a href="JavaScript:if(confirm('Confirm Delete?')==true){window.location='staffdelete.php?staffID=<?php echo $objResult["staffID"];?>';}">Delete </a></center></td>
 			</tr>
 			<?php
-				}
+			}
 			?>
 			</table>
-			<?php
-			mysql_close($objConnect);
-			?>
 		</div>
 	</div>
 </body>
