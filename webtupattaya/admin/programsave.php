@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php
-	$objConnect = mysql_connect("localhost","root","1234") or die("Error Connect to Database");
+	$objConnect = mysql_connect("localhost","root","admin") or die("Error Connect to Database");
 	$objDB = mysql_select_db("WebTUPattaya");
 	$strSQL = "UPDATE programtb SET ";
 	$strSQL .="txtSoftEN = '".$_POST["txtsoften"]."' ";

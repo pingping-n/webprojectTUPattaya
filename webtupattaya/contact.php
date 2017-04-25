@@ -40,8 +40,7 @@
 				<div class="column-right">					
 					<div style="overflow: scroll; height: 100%;">
 						<?php
-						$objConnect = mysql_connect("localhost","root","1234") or die("Error Connect to Database");
-						$objDB = mysql_select_db("WebTUPattaya");
+						include 'conDB.php';
 						$strSQL = "SELECT * FROM stafftb WHERE status='soften' ORDER BY staffID";
 						$objQuery = mysql_query($strSQL) or die ("Error Query [".$strSQL."]");
 						?>

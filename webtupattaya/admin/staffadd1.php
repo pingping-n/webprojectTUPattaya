@@ -12,7 +12,7 @@
 		echo "Copy/Upload Complete<br>";
 
 		//*** Insert Record ***//
-		$objConnect = mysql_connect("localhost","root","1234") or die("Error Connect to Database");
+		$objConnect = mysql_connect("localhost","root","admin") or die("Error Connect to Database");
 		$objDB = mysql_select_db("WebTUPattaya");
 		$strSQL = "INSERT INTO stafftb ";
 		$strSQL .="(name,status,profile,filesname) VALUES ('".$_POST["txtName"]."','".$_POST["status"]."','".$_POST["txtProfile"]."','".$_FILES["filUpload"]["name"]."')";

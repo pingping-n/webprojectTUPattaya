@@ -39,8 +39,7 @@
 				<div class="column-right">
 					<div style="overflow: scroll; height: 100%;">
 						<?php
-						mysql_connect("localhost","root","1234");
-						mysql_select_db("WebTUPattaya");
+						include 'conDB.php';
 						$strSQL = "SELECT * FROM programtb";
 						$objQuery = mysql_query($strSQL);
 						$objResult = mysql_fetch_array($objQuery);

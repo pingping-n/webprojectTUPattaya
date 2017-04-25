@@ -1,6 +1,6 @@
 <?
 session_start();
-mysql_connect("localhost","root","1234");
+mysql_connect("localhost","root","admin");
 mysql_select_db("WebTUPattaya");
 $strSQL = "SELECT * FROM member WHERE Username = '".mysql_real_escape_string($_POST['user_login'])."' 
 and Password = '".mysql_real_escape_string($_POST['pwd_login'])."'";

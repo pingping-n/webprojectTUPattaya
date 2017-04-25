@@ -6,7 +6,7 @@ if($_SESSION['UserID'] == "")
 	exit();
 }
 
-mysql_connect("localhost","root","1234") or die("Error Connect to Database");
+mysql_connect("localhost","root","admin") or die("Error Connect to Database");
 mysql_select_db("WebTUPattaya");
 $strSQL = "SELECT * FROM member WHERE UserID = '".$_SESSION['UserID']."' ";
 $objQuery = mysql_query($strSQL);

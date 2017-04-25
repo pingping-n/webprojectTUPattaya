@@ -31,8 +31,8 @@
 			</div>
 			<div class="bottom-content">
 				<?php
-				mysql_connect("localhost","root","1234");
-				mysql_select_db("WebTUPattaya");
+				include 'conDB.php';
+
 				$strSQL = "SELECT * FROM newstb";
 				$objQuery = mysql_query($strSQL);
 				$objResult = mysql_fetch_array($objQuery);
