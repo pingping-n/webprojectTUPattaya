@@ -7,8 +7,7 @@
 </head>
 <body>
 <?php
-	$objConnect = mysql_connect("localhost","root","admin") or die("Error Connect to Database");
-	$objDB = mysql_select_db("WebTUPattaya");
+	include 'include/condb.php';
 	$strSQL = "UPDATE newstb SET ";
 	$strSQL .="newsleft = '".$_POST["newsleft"]."' ";
 	$strSQL .=",newscenter = '".$_POST["newscenter"]."' ";

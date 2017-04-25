@@ -7,8 +7,7 @@
 </head>
 <body>
 <?php
-	$objConnect = mysql_connect("localhost","root","admin") or die("Error Connect to Database");
-	$objDB = mysql_select_db("WebTUPattaya");
+	include 'include/condb.php';
 	$strSQL = "SELECT * FROM stafftb WHERE staffID = '".$_GET["staffID"]."' ";
 	$objQuery = mysql_query($strSQL) or die ("Error Query [".$strSQL."]");
 	$objResult = mysql_fetch_array($objQuery);

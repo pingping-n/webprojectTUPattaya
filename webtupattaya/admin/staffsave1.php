@@ -9,8 +9,7 @@
 <?php
 
 		//*** Update Record ***//
-		$objConnect = mysql_connect("localhost","root","admin") or die("Error Connect to Database");
-		$objDB = mysql_select_db("WebTUPattaya");
+		include 'include/condb.php';
 
 		$strSQL = "UPDATE stafftb ";
 		$strSQL .=" SET name = '".$_POST["txtName"]."' WHERE staffID = '".$_GET["staffID"]."' ";
