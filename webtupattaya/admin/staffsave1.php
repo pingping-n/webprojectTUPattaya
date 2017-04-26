@@ -11,12 +11,19 @@
 		//*** Update Record ***//
 	include 'condb.php';
 
-	$strSQL = "UPDATE stafftb ";
-	$strSQL .=" SET name = '".$_POST["txtName"]."' WHERE staffID = '".$_GET["staffID"]."' ";
-	$strSQL = "UPDATE stafftb ";
-	$strSQL .=" SET profile = '".$_POST["txtProfile"]."' WHERE staffID = '".$_GET["staffID"]."' ";
-	$strSQL = "UPDATE stafftb ";
-	$strSQL .=" SET status = '".$_POST["status"]."' WHERE staffID = '".$_GET["staffID"]."' ";
+	// $strSQL = "UPDATE stafftb ";
+	// $strSQL .=" SET name = '".$_POST["txtName"]."' WHERE staffID = '".$_GET["staffID"]."' ";
+	// $strSQL = "UPDATE stafftb ";
+	// $strSQL .=" SET profile = '".$_POST["txtProfile"]."' WHERE staffID = '".$_GET["staffID"]."' ";
+	// $strSQL = "UPDATE stafftb ";
+	// $strSQL .=" SET status = '".$_POST["status"]."' WHERE staffID = '".$_GET["staffID"]."' ";
+
+	$strSQL = "UPDATE stafftb SET 
+	name = '".$_POST["txtName"]."' ,
+	profile = '".$_POST["txtProfile"]."' ,
+	status = '".$_POST["status"]."'
+	WHERE staffID = '".$_GET["staffID"]."' ";
+
 	$objQuery = mysqli_query($objConnect,$strSQL);		
 	
 	if($_FILES["filUpload"]["name"] != "")
