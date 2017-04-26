@@ -9,12 +9,12 @@
 	<div class="header-cont">
 		<div class="header">
 			<div class="left-header">
-				<img src="images/logo_tu.gif" width="70px" height="70px">
+				<img src="images/logo_tu.gif" width="100px" height="100px">
 			</div>
 			<div class="right-header">
-				มหาวิทยาลัยธรรมศาตร์<br>
+				    มหาวิทยาลัยธรรมศาตร์<br>
 				THAMMASAT UNIVERSITY<br>
-				ศูนย์พัทยา
+				       ศูนย์พัทยา
 			</div>
 		</div>
 		<div class="content">
