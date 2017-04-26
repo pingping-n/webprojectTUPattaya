@@ -1,5 +1,5 @@
 <?php
-$objConnect = mysqli_connect("localhost","root","admin","WebTUPattaya") or die("Error Connect to Database");
+include 'condb.php';
 
 $strStaffID = $_GET["staffID"];
 $sql = "DELETE FROM stafftb WHERE staffID = '".$strStaffID."' ";

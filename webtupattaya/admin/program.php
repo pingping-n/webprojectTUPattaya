@@ -29,8 +29,8 @@ include 'include/connectDB.php';
 			<form action="programsave.php" method="post">
 				<?php
 					$strSQL = "SELECT * FROM programtb";
-					$objQuery = mysql_query($strSQL);
-					$objResult = mysql_fetch_array($objQuery);
+					$objQuery = mysqli_query($objConnect,$strSQL);
+					$objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
 				?>
 				SOFTWARE<br>
 				<textarea rows="10" cols="100" name="txtsoften"><?php echo $objResult["txtSoftEN"];?></textarea><br>
@@ -38,7 +38,7 @@ include 'include/connectDB.php';
 				<textarea rows="10" cols="100" name="txtauto"><?php echo $objResult["txtAuto"];?></textarea><br>
   				<input type="submit" name="submit" value="ยืนยัน">
   				<?php
-  					mysql_close();
+  					mysqli_close($objConnect);
   				?>
 			</form>
 		</div>

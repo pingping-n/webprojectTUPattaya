@@ -41,14 +41,14 @@
 						<?php
 						include 'conDB.php';
 						$strSQL = "SELECT * FROM programtb";
-						$objQuery = mysql_query($strSQL);
-						$objResult = mysql_fetch_array($objQuery);
+						$objQuery = mysqli_query($objConnect,$strSQL);
+						$objResult = mysqli_fetch_array($objQuery);
 						?>
 						<p>
 							<?php echo $objResult["txtSoftEN"];?>
 						</p>
 						<?php
-						mysql_close();
+						mysqli_close();
 						?>
 					</div>
 				</div>

@@ -34,8 +34,8 @@
 				include 'conDB.php';
 
 				$strSQL = "SELECT * FROM newstb";
-				$objQuery = mysql_query($strSQL);
-				$objResult = mysql_fetch_array($objQuery);
+				$objQuery = mysqli_query($objConnect,$strSQL);
+				$objResult = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
 				?>
 				<div class="column-left-home">
 					<p>
@@ -53,7 +53,7 @@
 					</p>
 				</div>
 				<?php
-				mysql_close();
+				mysqli_close($objConnect);
 				?>
 			</div>
 		</div>

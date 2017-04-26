@@ -1,3 +1,6 @@
+<?php
+include 'include/connectDB.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,8 +17,8 @@
 				<option value="auto">auto</option>
 				</select><br>
 		ประวัติ : <input type="text" name="txtProfile"><br>
-		รูปภาพ : <input type="file" name="filUpload"><br>
-	<input name="btnSubmit" type="submit" value="ยืนยัน">
+		รูปภาพ : <input type="file" value="Choose file" accept="image/*" id="filUpload" name="filUpload"><br>
+	<input name="submit" type="submit" value="ยืนยัน">
 </form>
 </body>
 </html>

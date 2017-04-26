@@ -42,10 +42,10 @@
 						<?php
 						include 'conDB.php';
 						$strSQL = "SELECT * FROM stafftb WHERE status='auto' ORDER BY staffID";
-						$objQuery = mysql_query($strSQL) or die ("Error Query [".$strSQL."]");
+						$objQuery = mysqli_query($objConnect,$strSQL) or die ("Error Query [".$strSQL."]");
 						?>
 						<?php
-						while($objResult = mysql_fetch_array($objQuery))
+						while($objResult = mysqli_fetch_array($objQuery))
 						{
 							?>
 							<div style="margin-bottom: 50px;">
@@ -55,7 +55,7 @@
 							</div>
 							<?php
 						}
-						mysql_close($objConnect);
+						mysqli_close($objConnect);
 						?>
 					</div>
 				</div>

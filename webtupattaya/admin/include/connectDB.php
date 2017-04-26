@@ -6,8 +6,8 @@ if($_SESSION['UserID'] == "")
 	exit();
 }
 
-include 'include/condb.php';
+include 'condb.php';
 $strSQL = "SELECT * FROM member WHERE UserID = '".$_SESSION['UserID']."' ";
-$objQuery = mysql_query($strSQL);
-$objResult = mysql_fetch_array($objQuery);
+$objQuery = mysqli_query($objConnect,$strSQL);
+$objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
 ?>

@@ -29,15 +29,15 @@ include 'include/connectDB.php';
 			<form action="homesave.php" method="post">
 				<?php
 					$strSQL = "SELECT * FROM newstb";
-					$objQuery = mysql_query($strSQL);
-					$objResult = mysql_fetch_array($objQuery);
+					$objQuery = mysqli_query($objConnect,$strSQL);
+					$objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
 				?>
 				<textarea rows="10" cols="100" name="newsleft"><?php echo $objResult["newsleft"];?></textarea><br>
 				<textarea rows="10" cols="100" name="newscenter"><?php echo $objResult["newscenter"];?></textarea><br>
 				<textarea rows="10" cols="100" name="newsright"><?php echo $objResult["newsright"];?></textarea><br>
   				<input type="submit" name="submit" value="ยืนยัน">
   				<?php
-  					mysql_close();
+  					mysqli_close();
   				?>
 			</form>
 		</div>

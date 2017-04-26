@@ -7,11 +7,11 @@
 </head>
 <body>
 <?php
-	include 'include/condb.php';
+	include 'condb.php';
 	$strSQL = "UPDATE programtb SET ";
 	$strSQL .="txtSoftEN = '".$_POST["txtsoften"]."' ";
 	$strSQL .=",txtAuto = '".$_POST["txtauto"]."' ";
-	$objQuery = mysql_query($strSQL);
+	$objQuery = mysqli_query($objConnect,$strSQL);
 	if($objQuery)
 	{
 		echo "Save Done.";
@@ -23,7 +23,7 @@
 		echo "Error Save [".$strSQL."]";
 		header("location:home.php");
 	}
-	mysql_close($objConnect);
+	mysqli_close($objConnect);
 ?>
 </body>
 </html>
