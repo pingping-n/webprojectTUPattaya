@@ -6,21 +6,25 @@ body{
     top: 0px;
 }
 .header {
-    height: 70px;
+    height: 100px;
     background: #b30000;
     border: 1px solid #CCC;
-    width: 960px;
+    width: 60.75%;
     position: fixed;
+    margin-left: 310px;
 }
 .left-header {
-    margin-left: 50px;
+    margin-left: 0px;
+    margin-top: 0px;
     width: 50px;
     float: left;
 }
 .right-header {
-    width: 830px;
+    width: 875px;
     float: right;
     color: white;
+    font-size: 20px;
+    margin-top: 10px;
 }
 
 .content {
@@ -33,6 +37,7 @@ body{
 
 .top-content {
     width: 100%;
+    margin-top: 25px;
 }
 .menu {
     padding: 0;
